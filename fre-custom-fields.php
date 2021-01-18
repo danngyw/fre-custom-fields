@@ -3,8 +3,8 @@
 Plugin Name: Fre Custom Fields
 Plugin URI: http://enginethemes.com/
 Version: 1.0
-Author: EngineThemes
-Author URI: enginethemes.com
+Author: danng
+Author URI: https://danhoat.wordpress.com
 License: GPLv2 or later
 Text Domain: fre_fields
 */
