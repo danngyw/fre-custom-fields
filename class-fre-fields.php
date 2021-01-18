@@ -49,10 +49,10 @@ Class Fre_Fields{
 		}
 	}
 	function render_input_field($field){ ?>
-	<div class="fre-input-field">
-                    <label class="fre-field-title" for="fre-project-title"><?php echo $field->label;?></label>
-                    <input class="input-item text-field" type="text" name="<?php echo $field->name;?>"  placeholder="<?php echo $field->placeholder;?>">
-                </div>
+		<div class="fre-input-field">
+	        <label class="fre-field-title" for="fre-project-title"><?php echo $field->label;?></label>
+	        <input class="input-item text-field" type="text" name="<?php echo $field->name;?>"  placeholder="<?php echo $field->placeholder;?>">
+	    </div>
         <?php
 	}
 	function render_textarea_field($field){ ?>
@@ -61,7 +61,6 @@ Class Fre_Fields{
             <textarea name="<?php echo $field->name;?>" placeholder="<?php echo $field->placeholder;?>" ></textarea>
         </div>
         <?php
-
 	}
 }
 
