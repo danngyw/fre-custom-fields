@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Fre Custom Fields
-Plugin URI: http://enginethemes.com/
+Plugin URI: https://danhoat.wordpress.com
 Version: 1.0
 Author: danng
 Author URI: https://danhoat.wordpress.com
