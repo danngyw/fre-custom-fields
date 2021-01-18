@@ -33,6 +33,7 @@ if ( ! function_exists('fre_define_custom_fields') ){
 		return $fields;
 	}
 }
+
 function includes_fre_fields() {
 
 	// bootstrap the core plugin
