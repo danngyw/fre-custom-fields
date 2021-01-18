@@ -32,9 +32,6 @@ Class Fre_Fields{
 				contine;
 			$field = (object) $field;
 			$this->render_html($field);
-
-			?>
-			<?php
 		}
 	}
 	function render_html($field){
