@@ -3,10 +3,10 @@
  * Manually define all custom fields in this method.
 */
 if ( ! function_exists('fre_define_custom_fields') ){
-	function fre_define_custom_fields($fields = array();){
+	function fre_define_custom_fields( $fields = array() ){
 
 		// Define field 1
-		$fields[] = array(
+		$fields['custom_field_1'] = array(
 			'name' => 'custom_field_1',
 			'label' => "Custom Field 1",
 			'placeholder' => 'Field 1 placehoder',
@@ -14,7 +14,7 @@ if ( ! function_exists('fre_define_custom_fields') ){
 			'required' => true,
 		);
 		// define fields 3
-		$fields[] = array(
+		$fields['custom_field_2'] = array(
 			'name' => 'custom_field_2',
 			'label' => "Custom Field 2",
 			'type' => 'textarea',
