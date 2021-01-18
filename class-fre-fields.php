@@ -2,27 +2,8 @@
 Class Fre_Fields{
 	public $fields;
 	function __construct(){
-		$this->fields = array();
-		$this->define_fields();
+			$this->fields = fre_define_custom_fields();
 		add_action('ae_submit_post_form',array($this, 'fre_submit_project_fields') );
-	}
-	function define_fields(){
-		$fields = array();
-		// Define field 1
-		$this->fields[] = array(
-			'name' => 'custom_field_1',
-			'label' => "Custom Field 1",
-			'placeholder' => 'Field 1 placehoder',
-			'type' => 'text', // text/area/select/checkbox/radio
-			'required' => true,
-		);
-		// define fields 3
-		$this->fields[] = array(
-			'name' => 'custom_field_2',
-			'label' => "Custom Field 2",
-			'type' => 'textarea',
-			'placeholder' => 'Field 2 placehoder',
-		);
 	}
 
 	function fre_submit_project_fields(){
