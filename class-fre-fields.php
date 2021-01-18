@@ -30,6 +30,7 @@ Class Fre_Fields{
 			$i++;
 		}
 	}
+
 	function render_html_fields_input(){
 		foreach ($this->fields as $key => $field) {
 			if( empty($field) )
