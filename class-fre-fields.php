@@ -5,21 +5,29 @@ Class Fre_Fields{
 			$this->fields = fre_define_custom_fields();
 		add_action('ae_submit_post_form',array($this, 'render_html_fields_input') ); // in post project form.
 		add_action('ae_insert_project', array($this,'save_custom_fields'), 10 , 2);
-		add_action('after_sidebar_single_project', array($this, 'render_html_fields_output') ); // in single project page.
+		add_action('after_category_single_project', array($this, 'render_html_fields_output') ); // in single project page.
 	}
 	function save_custom_fields($project_id, $args){
 		foreach ($this->fields as $key=> $field) {
-			if(isset($args[$key])){
-				update_post_meta($project_id,$args[$key]);
+			if( isset($args[$key]) ){
+				update_post_meta($project_id, $key, $args[$key]);
 			}
 		}
 	}
 	function render_html_fields_output($project){
+		$i = 0;
 		foreach ($this->fields as $key=> $field) {
-			$meta_value = get_post_meta($project_id,$key, true);
+			$meta_value = get_post_meta($project->ID, $key, true);
+			$field 		= (object)$field;
+
 			if($meta_value){
-				echo '<label>'.$fields->label. '</label>: '.$meta_value.'<br />';
+
+				if($i == 0){
+					echo '<h4>'.FIELDS_OUTPUT_HEADING.'</h4>';
+				}
+				echo '<label>'.$field->label. '</label>: '.$meta_value.'<br />';
 			}
+			$i++;
 		}
 	}
 	function render_html_fields_input(){
