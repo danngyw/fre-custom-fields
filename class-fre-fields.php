@@ -12,15 +12,16 @@ Class Fre_Fields{
 		$this->fields[] = array(
 			'name' => 'custom_field_1',
 			'label' => "Custom Field 1",
-			'placeholder' => 'This is placehoder',
-			'type' => 'text'// text/area/select/checkbox/radio
+			'placeholder' => 'Field 1 placehoder',
+			'type' => 'text', // text/area/select/checkbox/radio
+			'required' => true,
 		);
 		// define fields 3
 		$this->fields[] = array(
 			'name' => 'custom_field_2',
 			'label' => "Custom Field 2",
 			'type' => 'textarea',
-			'placeholder' => 'This is placehoder',
+			'placeholder' => 'Field 2 placehoder',
 		);
 	}
 
@@ -38,6 +39,10 @@ Class Fre_Fields{
 	}
 	function render_html($field){
 		$type = $field->type;
+		if(isset($field->required) && $field->required )
+			$field->required = 'required';
+		else $field->required = '';
+
 		switch ($type) {
 			case 'textarea':
 				$this->render_textarea_field($field);
@@ -51,14 +56,14 @@ Class Fre_Fields{
 	function render_input_field($field){ ?>
 		<div class="fre-input-field">
 	        <label class="fre-field-title" for="fre-project-title"><?php echo $field->label;?></label>
-	        <input class="input-item text-field" type="text" name="<?php echo $field->name;?>"  placeholder="<?php echo $field->placeholder;?>">
+	        <input class="input-item text-field"   <?php echo $field->required;?>  type="text" name="<?php echo $field->name;?>"  placeholder="<?php echo $field->placeholder;?>">
 	    </div>
         <?php
 	}
 	function render_textarea_field($field){ ?>
 	 	<div class="fre-input-field">
             <label class="fre-field-title" for="fre-project-describe"><?php echo $field->label;?></label>
-            <textarea name="<?php echo $field->name;?>" placeholder="<?php echo $field->placeholder;?>" ></textarea>
+            <textarea name="<?php echo $field->name;?>" <?php echo $field->required;?> placeholder="<?php echo $field->placeholder;?>" ></textarea>
         </div>
         <?php
 	}
