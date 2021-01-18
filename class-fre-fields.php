@@ -7,7 +7,6 @@ Class Fre_Fields{
 	}
 
 	function fre_submit_project_fields(){
-
 		foreach ($this->fields as $key => $field) {
 			if( empty($field) )
 				continue;
