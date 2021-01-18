@@ -10,7 +10,7 @@ Class Fre_Fields{
 
 		foreach ($this->fields as $key => $field) {
 			if( empty($field) )
-				contine;
+				continue;
 			$field = (object) $field;
 			$this->render_html($field);
 		}
