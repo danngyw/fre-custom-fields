@@ -19,26 +19,26 @@ Class Fre_Fields{
 	}
 	function render_html_fields_output($project){
 		$i = 0;
-		foreach ($this->fields as $key=> $field) {
-			$meta_value = get_post_meta($project->ID, $key, true);
-			$field 		= (object)$field;
+		foreach ($this->fields as $field_name=> $field) {
+			$field_value 	= get_post_meta($project->ID, $field_name, true);
+			$field 			= (object) $field;
 
-			if($meta_value){
-
+			if($field_value){
 				if($i == 0){
 					echo '<h4>'.FIELDS_OUTPUT_HEADING.'</h4>';
 				}
-				echo '<label>'.$field->label. '</label>: '.$meta_value.'<br />';
-			}
-			$i++;
+				echo '<label>'.$field->label. '</label>: '.$field_value.'<br />';
+			} $i++;
 		}
 	}
 
 	function render_html_fields_input(){
-		foreach ($this->fields as $key => $field) {
+		foreach ($this->fields as $field_name => $field) {
 			if( empty($field) )
 				continue;
-			$field = (object) $field;
+			$field['name'] 	= $field_name;
+			$field 			= (object) $field;
+
 			$this->render_html($field);
 		}
 	}

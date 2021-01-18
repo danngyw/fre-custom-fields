@@ -7,7 +7,6 @@ if ( ! function_exists('fre_define_custom_fields') ){
 
 		// Define field 1
 		$fields['custom_field_1'] = array(
-			'name' 			=> 'custom_field_1',
 			'label' 		=> "Custom Field 1",
 			'placeholder' 	=> 'Field 1 placehoder',
 			'type' 			=> 'text', // text/area/select/checkbox/radio
@@ -15,7 +14,6 @@ if ( ! function_exists('fre_define_custom_fields') ){
 		);
 		// define fields 3
 		$fields['custom_field_2'] = array(
-			'name' 			=> 'custom_field_2',
 			'label'			=> "Custom Field 2",
 			'type' 			=> 'textarea',
 			'placeholder' 	=> 'Field 2 placehoder',
