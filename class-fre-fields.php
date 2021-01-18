@@ -11,9 +11,9 @@ Class Fre_Fields{
 	}
 
 	function save_custom_fields($project_id, $args){
-		foreach ($this->fields as $key=> $field) {
-			if( isset($args[$key]) ){
-				update_post_meta($project_id, $key, $args[$key]);
+		foreach ($this->fields as $field_name => $field) {
+			if( isset($args[$field_name]) ){
+				update_post_meta($project_id, $field_name, $args[$field_name]);
 			}
 		}
 	}
