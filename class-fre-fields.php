@@ -48,6 +48,9 @@ Class Fre_Fields{
 			case 'textarea':
 				$this->render_textarea_field($field);
 				break;
+			case 'select':
+				$this->render_select_field($field);
+				break;
 			default:
 				$this->render_input_field($field);
 				break;
@@ -64,6 +67,22 @@ Class Fre_Fields{
             <label class="fre-field-title" for="fre-project-describe"><?php echo $field->label;?></label>
             <textarea name="<?php echo $field->name;?>"<?php echo $field->required;?> placeholder="<?php echo $field->placeholder;?>" ></textarea>
         </div> <?php
+	}
+	function render_select_field($field){ ?>
+		<div class="fre-input-field">
+            <label class="fre-field-title" for="fre-project-describe"><?php echo $field->label;?></label>
+
+            <?php
+            if($field->options && !empty($field->options)) {
+            	echo "<select class='fre-chosen-single' name='{$field->name}'>";
+	            foreach ( $field->options as $pos => $option ) {
+	            	$option  = (object) $option;
+	            	echo "<option value ='{$option->value}'> {$option->label}</option>";
+	            }
+	            echo '</select>';
+	        }?>
+        </div><?php
+
 	}
 }
 

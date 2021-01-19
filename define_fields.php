@@ -18,6 +18,12 @@ if ( ! function_exists('fre_define_custom_fields') ){
 			'type' 			=> 'textarea',
 			'placeholder' 	=> 'Field 2 Placehoder',
 		);
+		$fields['custom_field_3'] = array(
+			'label'			=> "Custom Field 3",
+			'type' 			=> 'select',
+			'options' 		=> array(array('label' => "Option 1","value" => 'opt1'),array('label' => 'Option 2','value' => 'opt2') ),
+			'placeholder' 	=> 'Field 2 Placehoder',
+		);
 		return $fields;
 	}
 }
