@@ -5,8 +5,8 @@ Class Fre_Fields{
 
 	function __construct(){
 		$this->fields = fre_define_custom_fields();
-		add_action('ae_submit_post_form',array($this, 'render_html_fields_input') ); // in post project form.
-		add_action('ae_insert_project', array($this,'save_custom_fields'), 10 , 2);
+		add_action('ae_submit_post_form', array($this, 'render_html_fields_input') ); // in post project form.
+		add_action('ae_insert_project', array($this, 'save_custom_fields'), 10 , 2);
 		add_action('after_category_single_project', array($this, 'render_html_fields_output') ); // in single project page.
 	}
 
