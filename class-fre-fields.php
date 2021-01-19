@@ -23,28 +23,26 @@ Class Fre_Fields{
 			$field_value 	= get_post_meta($project->ID, $field_name, true);
 			$field 			= (object) $field;
 
-			if($field_value){
-				if($i == 0){
-					echo '<h4>'.FIELDS_OUTPUT_HEADING.'</h4>';
-				}
+			if( $field_value ){
+				if($i == 0) echo '<h4>'.FIELDS_OUTPUT_HEADING.'</h4>';
 				echo '<label>'.$field->label. '</label>: '.$field_value.'<br />';
 			} $i++;
 		}
 	}
 
 	function render_html_fields_input(){
-		foreach ($this->fields as $field_name => $field) {
+		foreach ($this->fields as $name => $field) {
 			if( empty($field) )
 				continue;
-			$field['name'] 	= $field_name;
+			$field['name'] 	= $name;
 			$field 			= (object) $field;
 
 			$this->render_html($field);
 		}
 	}
 	function render_html($field){
-		$type = $field->type;
-		$field->required = isset($field->required) && ( $field->required ) ? ' required' : '';
+		$type 				= $field->type;
+		$field->required 	= isset($field->required) && ( $field->required ) ? ' required' : '';
 
 		switch ($type) {
 			case 'textarea':
