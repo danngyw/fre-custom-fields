@@ -8,15 +8,15 @@ if ( ! function_exists('fre_define_custom_fields') ){
 		// Define field 1
 		$fields['custom_field_1'] = array(
 			'label' 		=> "Custom Field 1",
-			'placeholder' 	=> 'Field 1 placehoder',
+			'placeholder' 	=> 'Field 1 Placehoder',
 			'type' 			=> 'text', // text/area/select/checkbox/radio
 			'required' 		=> true,
 		);
-		// define fields 3
+		// define fields 2
 		$fields['custom_field_2'] = array(
 			'label'			=> "Custom Field 2",
 			'type' 			=> 'textarea',
-			'placeholder' 	=> 'Field 2 placehoder',
+			'placeholder' 	=> 'Field 2 Placehoder',
 		);
 		return $fields;
 	}
