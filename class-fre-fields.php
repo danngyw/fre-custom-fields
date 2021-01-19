@@ -44,16 +44,12 @@ Class Fre_Fields{
 	}
 	function render_html($field){
 		$type = $field->type;
-
-		if( isset($field->required) && $field->required  )
-			$field->required = 'required';
-		else $field->required = '';
+		$field->required = isset($field->required) && ( $field->required ) ? ' required' : '';
 
 		switch ($type) {
 			case 'textarea':
 				$this->render_textarea_field($field);
 				break;
-
 			default:
 				$this->render_input_field($field);
 				break;
@@ -62,16 +58,14 @@ Class Fre_Fields{
 	function render_input_field($field){ ?>
 		<div class="fre-input-field">
 	        <label class="fre-field-title" for="fre-project-title"><?php echo $field->label;?></label>
-	        <input class="input-item text-field"   <?php echo $field->required;?>  type="text" name="<?php echo $field->name;?>"  placeholder="<?php echo $field->placeholder;?>">
-	    </div>
-        <?php
+	        <input class="input-item text-field" name="<?php echo $field->name;?>"<?php echo $field->required;?>  type="text"  placeholder="<?php echo $field->placeholder;?>">
+	    </div><?php
 	}
 	function render_textarea_field($field){ ?>
 	 	<div class="fre-input-field">
             <label class="fre-field-title" for="fre-project-describe"><?php echo $field->label;?></label>
-            <textarea name="<?php echo $field->name;?>" <?php echo $field->required;?> placeholder="<?php echo $field->placeholder;?>" ></textarea>
-        </div>
-        <?php
+            <textarea name="<?php echo $field->name;?>"<?php echo $field->required;?> placeholder="<?php echo $field->placeholder;?>" ></textarea>
+        </div> <?php
 	}
 }
 
