@@ -22,6 +22,3 @@ if ( ! function_exists('fre_define_custom_fields') ){
 	}
 }
 define('FIELDS_OUTPUT_HEADING','Custom Fields');
-
-
-
